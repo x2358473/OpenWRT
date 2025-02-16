@@ -63,7 +63,7 @@ UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 UPDATE_PACKAGE "alist" "sbwml/luci-app-alist" "main"
 UPDATE_PACKAGE "mosdns" "sbwml/luci-app-mosdns" "v5"
 
-UPDATE_PACKAGE "luci-app-qmodem" "FUjr/modem_feeds" "main" "pkg"
+UPDATE_PACKAGE "luci-app-qmodem" "FUjr/modem_feeds" "main"
 UPDATE_PACKAGE "luci-app-store" "linkease/istore" "main"
 UPDATE_PACKAGE "luci-app-dockerman" "lisaac/luci-app-dockerman" "master"
 UPDATE_PACKAGE "luci-app-lucky" "sirpdboy/luci-app-lucky" "main"
