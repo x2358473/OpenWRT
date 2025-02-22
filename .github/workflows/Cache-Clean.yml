@@ -8,7 +8,7 @@ permissions:
   actions: write
 
 jobs:
-  auto_clean:
+  Cache_clean:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
