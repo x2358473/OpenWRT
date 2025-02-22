@@ -3,17 +3,14 @@ name: Cache-Clean
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-  actions: write
+permissions: write-all
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 jobs:
   auto_clean:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
       - name: Cache Clean
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh cache delete --all
