@@ -86,7 +86,7 @@ fi
 #修复libffi编译失败
 LF_FILE=$(find ../feeds/packages/ -maxdepth 3 -type f -wholename "*/libffi/Makefile")
 if [ -f "$LF_FILE" ]; then
-	sed -i '/\/autoreconf/d' $LF_FILE
+	sed -i '/autoreconf/d' $LF_FILE
 
 	cd $PKG_PATH && echo "libffi has been fixed!"
 fi
