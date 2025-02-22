@@ -1,16 +1,19 @@
 name: Cache-Clean
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 只允许手动触发
 
 permissions:
-  contents: write
+  contents: write  # 给权限，只允许修改内容权限
 
 jobs:
   auto_clean:
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # 检出代码，确保在 Git 仓库内
       - name: Cache Clean
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh cache delete --all
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 自动生成的 token
+        run: |
+          gh cache delete --all
