@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # 只允许手动触发
 
 permissions:
-  contents: write  # 给权限，只允许修改内容权限
+  contents: write-all
 
 jobs:
   auto_clean:
