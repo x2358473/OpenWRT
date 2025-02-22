@@ -1,11 +1,11 @@
 name: Cache-Clean
 
 on:
-  workflow_dispatch:  # 只允许手动触发
+  workflow_dispatch:
 
 permissions:
-  contents: write   # 允许修改仓库内容
-  actions: write    # 允许删除缓存
+  contents: write
+  actions: write
 
 jobs:
   auto_clean:
@@ -15,5 +15,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Cache Clean
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 自动生成的 token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh cache delete --all
