@@ -1,5 +1,5 @@
 #CI项目
-name: IPQ3600
+name: IPQ
 
 #CI计划
 on:
@@ -36,8 +36,8 @@ jobs:
         SOURCE: [VIKINGYFY/immortalwrt]
         BRANCH: [main]
 
-    #调用公用编译核心WRT-CORE-3600.yml
-    uses: ./.github/workflows/WRT-CORE-3600.yml
+    #调用公用编译核心WRT-CORE.yml
+    uses: ./.github/workflows/WRT-CORE.yml
     with:
       #编译配置
       WRT_CONFIG: ${{matrix.CONFIG}}
