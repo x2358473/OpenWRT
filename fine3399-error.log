@@ -1,3 +1,157 @@
+channel 0 training pass!
+channel 1 training pass!
+channel 0, cs 0, advanced training done
+channel 0, cs 1, advanced training done
+channel 1, cs 0, advanced training done
+channel 1, cs 1, advanced training done
+channel 0, cs 0, dq 12 RISK!!! read vref 27% no find pass-eye
+channel 0, cs 0, dq 15 RISK!!! read vref 27% no find pass-eye
+channel 0, cs 1, dq 15 RISK!!! TdiVW_total violate spec
+ change freq to 856MHz 1,0
+ch 0 ddrconfig = 0x101, ddrsize = 0x2020
+ch 1 ddrconfig = 0x101, ddrsize = 0x2020
+pmugrf_os_reg[2] = 0x3AA1FAA1, stride = 0xD
+ddr_set_rate to 328MHZ
+ddr_set_rate to 666MHZ
+ddr_set_rate to 416MHZ, ctl_index 0
+ddr_set_rate to 856MHZ, ctl_index 1
+support 416 856 328 666 MHz, current 856MHz
+OUT
+Boot1 Release Time: May 26 2022 18:14:35, version: 1.30
+CPUId = 0x0
+ChipType = 0x10, 320
+mmc_set_bus_width: 1
+EmmcClk: 375KHZ
+mmc_switch index:183, value:0x2
+mmc_switch index:185, value:0x2
+EmmcClk: 375KHZ
+mmc_set_bus_width: 8
+EmmcClk: 200000KHZ
+SdmmcInit=2 0
+BootCapSize=100000
+UserCapSize=15028MB
+FwPartOffset=2000 , 100000
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+NeedKHz=200KHz, Clock=12000KHz
+mmc0:cmd5,20
+NeedKHz=24000KHz, Clock=192000KHz
+NeedKHz=40000KHz, Clock=192000KHz
+SdmmcInit=0 0
+BootCapSize=0
+UserCapSize=30436MB
+FwPartOffset=2000 , 0
+StorageInit ok = 218413
+SecureMode = 0
+SecureInit read PBA: 0x4
+SecureInit read PBA: 0x404
+SecureInit read PBA: 0x804
+SecureInit read PBA: 0xc04
+SecureInit read PBA: 0x1004
+SecureInit read PBA: 0x1404
+SecureInit read PBA: 0x1804
+SecureInit read PBA: 0x1c04
+SecureInit ret = 0, SecureMode = 0
+atags_set_bootdev: ret:(0)
+GPT 0x33368a8 signature is wrong
+recovery gpt...
+recovery gpt success!
+no find partition:uboot.
+LoadTrust Addr:0x4000
+No find bl30.bin
+No find bl32.bin
+Load uboot, ReadLba = 2000
+Load OK, addr=0x200000, size=0xea018
+RunBL31 0x40000 @ 356907 us
+NOTICE:  BL31: v1.3(release):8f40012ab
+NOTICE:  BL31: Built : 14:20:53, Feb 16 2023
+NOTICE:  BL31: Rockchip release version: v1.1
+INFO:    GICv3 with legacy support detected. ARM GICV3 driver initialized in EL3
+INFO:    Using opteed sec cpu_context!
+INFO:    boot cpu mask: 0
+INFO:    plat_rockchip_pmu_init(1203): pd status 3e
+INFO:    BL31: Initializing runtime services
+WARNING: No OPTEE provided by BL2 boot loader, Booting device without OPTEE initialization. SMC`s destined for OPTEE will return SMC_UNK
+ERROR:   Error initializing runtime service opteed_fast
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2025.01-ImmortalWrt-r0-1edb7a0 (Mar 04 2025 - 14:48:39 +0000)
+
+SoC: Rockchip rk3399
+Reset cause: POR
+Model: RUMU3F Fine3399
+DRAM:  4 GiB (effective 3.9 GiB)
+PMIC:  RK808
+Core:  297 devices, 28 uclasses, devicetree: separate
+MMC:   mmc@fe310000: 3, mmc@fe320000: 1, mmc@fe330000: 0
+Loading Environment from MMC... Reading from MMC(0)... *** Warning - bad CRC, using default environment
+
+In:    serial,usbkbd
+Out:   serial,vidconsole
+Err:   serial,vidconsole
+Model: RUMU3F Fine3399
+Net:   Error enabling phy supply
+No ethernet found.
+
+Hit any key to stop autoboot:  0
+Scanning for bootflows in all bootdevs
+Seq  Method       State   Uclass    Part  Name                      Filename
+---  -----------  ------  --------  ----  ------------------------  ----------------
+Scanning global bootmeth 'efi_mgr':
+Card did not respond to voltage select! : -110
+Cannot persist EFI variables without system partition
+  0  efi_mgr      ready   (none)       0  <NULL>
+** Booting bootflow '<NULL>' with efi_mgr
+Loading Boot0000 'mmc 0' failed
+Loading Boot0001 'mmc 1' failed
+EFI boot manager: Cannot load any image
+Boot failed (err=-14)
+Scanning bootdev 'mmc@fe320000.bootdev':
+  1  script       ready   mmc          1  mmc@fe320000.bootdev.part /boot.scr
+** Booting bootflow 'mmc@fe320000.bootdev.part_1' with script
+4840992 bytes read in 306 ms (15.1 MiB/s)
+## Loading kernel from FIT Image at 02080000 ...
+   Using 'config-1' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'kernel-1' kernel subimage
+     Description:  ARM64 OpenWrt Linux-6.6.80
+     Type:         Kernel Image
+     Compression:  lzma compressed
+     Data Start:   0x020800e8
+     Data Size:    4776896 Bytes = 4.6 MiB
+     Architecture: AArch64
+     OS:           Linux
+     Load Address: 0x03200000
+     Entry Point:  0x03200000
+     Hash algo:    crc32
+     Hash value:   b25df37c
+     Hash algo:    sha1
+     Hash value:   56ec2aacd23845e3e85bcaf822b286cb4c606f28
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Loading fdt from FIT Image at 02080000 ...
+   Using 'config-1' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'fdt-1' fdt subimage
+     Description:  ARM64 OpenWrt rumu3f_fine-3399 device tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x0250e5e8
+     Data Size:    62190 Bytes = 60.7 KiB
+     Architecture: AArch64
+     Hash algo:    crc32
+     Hash value:   aebea862
+     Hash algo:    sha1
+     Hash value:   c9e1871a8a20acc0cf346685fa9acb0cbd8cb557
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x250e5e8
+Working FDT set to 250e5e8
+   Uncompressing Kernel Image to 3200000
+   Loading Device Tree to 00000000f4ea8000, end 00000000f4eba2ed ... OK
+Working FDT set to f4ea8000
+
 Starting kernel ...
 
 [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
